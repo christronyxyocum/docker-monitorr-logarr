@@ -1,6 +1,6 @@
 Docker image with the [Monitorr](https://github.com/Monitorr/Monitorr "Monitorr") and [Logarr](https://github.com/Monitorr/logarr "Logarr") projects built-in.
 
-#### Usage
+### Usage
 ```
 docker create \
   --name=monitorr-logarr \
@@ -15,9 +15,12 @@ docker create \
 #### Parameters
 * `--name` - The name of the container - Call it whatever you want.
 * `--restart=on-failure` Container restart mode - Docker attempts to restarts the container if the container returns a non-zero exit code. More info [HERE](https://docs.docker.com/engine/admin/start-containers-automatically/ "HERE") on container restart policies.
-* `-v /home/logarr/config:/config` - Your preferred app data config path, IE: where you're storing the Logarr config files.
-* `-v /home/logarr/config/log:/var/log` Your preferred app log path, IE: where you're storing the Logarr, Nginx, and PHP logs.
+* `-v /home/monitorr-logarr/config:/config` - Your preferred app data config path, IE: where you're storing the Logarr config files.
+* `-v /home/monitorr-logarr/config/log:/var/log` Your preferred app log path, IE: where you're storing the Logarr, Nginx, and PHP logs.
 * `-e TZ` - Your timezone, IE: `America/New_York`.
+
+### Accesing services
+Monitorr is available on the root of the host, IE: `http://localhost/`, and Logarr is then available on the `/logarr` dir, IE: `http://localhost/logarr/`.
 
 ### Info
 * To monitor the logs of the container in realtime `docker logs -f logarr`
