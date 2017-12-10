@@ -2,8 +2,8 @@
 
 # Clone Monitorr & Logarr repos
 [[ ! -d /config/www/Dashboard/.git ]] && \
-git clone https://github.com/Monitorr/monitorr.git /config/www/Monitorr
-git clone https://github.com/Monitorr/logarr.git /config/www/Monitorr/logarr
+git clone https://github.com/Monitorr/monitorr.git /config/www/monitorr
+git clone https://github.com/Monitorr/logarr.git /config/www/monitorr/logarr
 
 # Set permissions
 chown -R abc:abc \
